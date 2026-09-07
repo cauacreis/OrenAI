@@ -3,30 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrenAI - Pitch Deck</title>
+    <title>OrenAI - Pitch Deck Executivo (3 Minutos)</title>
     
-    <!-- Reveal.js CSS (Usando CDNJS com versão fixa para estabilidade) -->
+    <!-- Reveal.js CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --primary-color: #f39c12; /* Gold/Mineral */
-            --accent-color: #e67e22; 
-            --bg-dark: #0a0f16; /* Deep dark blue/grey */
+            --primary-color: #f39c12; /* Ouro Mineral */
+            --accent-color: #e67e22;  /* Cobre Pórfiro */
+            --bg-dark: #070b11;       /* Dark Mode Geológico */
+            --card-bg: rgba(16, 24, 38, 0.75);
+            --border-glow: rgba(243, 156, 18, 0.25);
         }
         
         body {
             background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(circle at 15% 50%, rgba(243, 156, 18, 0.08), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(230, 126, 34, 0.08), transparent 25%);
+                radial-gradient(circle at 10% 20%, rgba(243, 156, 18, 0.08), transparent 35%),
+                radial-gradient(circle at 90% 80%, rgba(230, 126, 34, 0.08), transparent 35%);
+            font-family: 'Inter', sans-serif;
+            color: #f1f2f6;
         }
 
         .reveal {
@@ -37,26 +41,38 @@
             font-family: 'Inter', sans-serif;
             font-weight: 800;
             text-transform: none;
-            letter-spacing: -1px;
+            letter-spacing: -0.5px;
             color: #ffffff;
             line-height: 1.2;
         }
 
         /* Action Titles Styling */
         .reveal h2.action-title {
-            font-size: 1.6em;
-            background: -webkit-linear-gradient(45deg, #fff, var(--primary-color));
+            font-size: 1.55em;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary-color) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 50px;
+            margin-bottom: 24px;
+            text-align: left;
+            font-weight: 800;
+        }
+
+        /* Slide Layout: Grid Split */
+        .slide-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 28px;
+            align-items: center;
+            width: 100%;
             text-align: left;
         }
 
-        .reveal .slide-content {
+        .slide-content-full {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             text-align: left;
+            width: 100%;
         }
 
         .reveal ul {
@@ -67,42 +83,78 @@
         }
 
         .reveal li {
-            font-size: 1.1em;
-            margin-bottom: 25px;
+            font-size: 0.95em;
+            margin-bottom: 18px;
             display: flex;
             align-items: flex-start;
-            color: #d1d8e0;
+            color: #dfe4ea;
+            line-height: 1.45;
         }
 
         .reveal li i {
             color: var(--primary-color);
-            margin-top: 8px;
-            margin-right: 20px;
-            font-size: 0.8em;
+            margin-top: 5px;
+            margin-right: 16px;
+            font-size: 0.9em;
+            min-width: 22px;
+            text-align: center;
         }
 
         /* Glassmorphism Card */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            width: 100%;
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            border: 1px solid var(--border-glow);
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.65);
             box-sizing: border-box;
+        }
+
+        /* Visual Media Frame */
+        .media-frame {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0d131d;
+        }
+
+        .media-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 14px;
         }
 
         .highlight {
             color: var(--primary-color);
-            font-weight: 600;
+            font-weight: 700;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(243, 156, 18, 0.15);
+            color: var(--primary-color);
+            border: 1px solid rgba(243, 156, 18, 0.4);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.55em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 14px;
         }
 
         .logo-text {
-            font-size: 3em;
+            font-size: 3.2em;
             font-weight: 800;
             letter-spacing: -2px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .logo-ai {
             color: var(--primary-color);
@@ -110,171 +162,248 @@
         
         .speaker-notes-tip {
             position: absolute;
-            bottom: 20px;
+            bottom: 16px;
             left: 20px;
-            font-size: 14px;
-            color: rgba(255,255,255,0.3);
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.35);
             z-index: 1000;
-            font-family: sans-serif;
+            font-family: 'Inter', sans-serif;
+        }
+        .speaker-notes-tip kbd {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #fff;
         }
     </style>
 </head>
 <body>
 
-    <div class="speaker-notes-tip">Dica: Aperte a tecla <b>'S'</b> no teclado para abrir a visão do apresentador (Roteiro e Cronômetro).</div>
+    <div class="speaker-notes-tip">Dica do Apresentador: Pressione <kbd>S</kbd> para abrir a Janela do Orador (Cronômetro e Roteiro de 3 Minutos).</div>
 
     <div class="reveal">
         <div class="slides">
 
             <!-- Slide 1 -->
             <section data-transition="fade">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">A Maioria das Descobertas Minerais Começa com Decisões Lentas e Caras</h2>
-                    <ul>
-                        <li><i class="fas fa-money-bill-wave"></i> Milhões gastos em campanhas antes mesmo da primeira perfuração.</li>
-                        <li><i class="fas fa-hourglass-half"></i> Processos que dependem de análises altamente manuais e demoradas.</li>
-                        <li><i class="fas fa-exclamation-triangle"></i> Alta vulnerabilidade ao erro humano e viés de interpretação.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">O Gargalo Global</span>
+                        <h2 class="action-title">A Indústria Queima US$ 12 Bilhões ao Ano</h2>
+                        <ul>
+                            <li><i class="fas fa-exclamation-circle"></i> <b>99% de insucesso:</b> Em alvos greenfield, 99 de cada 100 furos são estéreis.</li>
+                            <li><i class="fas fa-dollar-sign"></i> <b>Custo unitário proibitivo:</b> Cada "furo seco" custa mais de <b>US$ 100.000</b>.</li>
+                            <li><i class="fas fa-chart-line-down"></i> <b>Gargalo crítico:</b> Falhas na interpretação multidimensional de dados preliminares.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_01_drill_cost.png" alt="Sondagem e Custo dos Furos Secos">
+                    </div>
                 </div>
                 <aside class="notes">
-                    “Uma única campanha de exploração mineral pode consumir milhões de reais antes mesmo da primeira perfuração. E muitas dessas decisões ainda dependem de análises manuais, lentas e sujeitas a erro humano.” (34 palavras)
+                    [SLIDE 1 - 30s]
+                    "A indústria de mineração gasta 12 bilhões de dólares por ano procurando novas jazidas. O problema é que 99% das perfurações acontecem no lugar errado. Cada erro custa mais de 100 mil dólares por falhas na interpretação de dados. Se a OrenAI evitar apenas 10 erros em uma campanha, a mineradora economiza 1 milhão de dólares antes mesmo da sonda ser ligada."
                 </aside>
             </section>
 
             <!-- Slide 2 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">A Explosão de Dados Geológicos Está Superando a Capacidade Humana</h2>
-                    <ul>
-                        <li><i class="fas fa-database"></i> Crescimento exponencial de dados geológicos, geoquímicos e geoespaciais.</li>
-                        <li><i class="fas fa-brain"></i> A capacidade humana de análise não acompanha o volume de informações.</li>
-                        <li><i class="fas fa-chart-line"></i> A transformação desses dados em decisões estratégicas virou o grande gargalo.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">A Barreira da Adoção</span>
+                        <h2 class="action-title">O Problema da IA Atual: A "Caixa-Preta"</h2>
+                        <ul>
+                            <li><i class="fas fa-cube"></i> <b>Algoritmos opacos:</b> Modelos tradicionais indicam coordenadas sem expor a física geológica.</li>
+                            <li><i class="fas fa-times-circle"></i> <b>Inauditabilidade:</b> Comitês técnicos recusam assinar relatórios sem transparência matemática.</li>
+                            <li><i class="fas fa-file-contract"></i> <b>Risco corporativo:</b> Nenhum geólogo aprova milhões de dólares confiando em "achismos" de IA.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_02_blackbox_ai.png" alt="A armadilha da IA Caixa-Preta">
+                    </div>
                 </div>
                 <aside class="notes">
-                    “A mineração vive uma explosão de dados geológicos, geoquímicos e geoespaciais. O problema é que transformar esses dados em decisões continua sendo um processo lento, caro e dependente de poucos especialistas."
+                    [SLIDE 2 - 20s]
+                    "As mineradoras tentaram adotar IA para analisar dados, mas os modelos convencionais não explicam suas decisões. A máquina aponta uma coordenada sem mostrar o cálculo geológico por trás. Nenhum comitê técnico aprova perfurações milionárias baseando-se em uma caixa-preta."
                 </aside>
             </section>
 
             <!-- Slide 3 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">OrenAI Transforma Milhões de Dados em Alvos Minerais Explicáveis</h2>
-                    <ul>
-                        <li><i class="fas fa-box-open"></i> O Fim da Caixa-Preta: IA tradicional não gera confiança em decisões de alto impacto.</li>
-                        <li><i class="fas fa-lightbulb"></i> <span class="highlight">OrenAI</span>: Combina Inteligência Artificial Explicável (XAI) com detecção de anomalias.</li>
-                        <li><i class="fas fa-map-marked-alt"></i> Modelagem de Prospetividade Mineral (MPM) 100% transparente.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">A Solução OrenAI</span>
+                        <h2 class="action-title">Arquitetura Multi-Agentes Especialista (MAS / MoE)</h2>
+                        <ul>
+                            <li><i class="fas fa-sitemap"></i> <b>Agente Orquestrador:</b> Roteamento semântico sob demanda sem rodar modelos desnecessários.</li>
+                            <li><i class="fas fa-gem"></i> <b>Subagentes por Commodity:</b> Silos dedicados para Cobre Pórfiro e Ouro Epitermal.</li>
+                            <li><i class="fas fa-shield-alt"></i> <b>Zero vazamento de pesos:</b> Modelos isolados em contêineres que anulam alucinações cruzadas.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_03_mas_architecture.png" alt="Arquitetura Multi-Agentes MoE">
+                    </div>
                 </div>
                 <aside class="notes">
-                    "Ao mesmo tempo, modelos de IA tradicionais funcionam como caixas-pretas, dificultando a confiança em decisões de alto impacto. A OrenAI resolve isso unindo inteligência artificial explicável, detecção de anomalias geoquímicas e validação humana."
+                    [SLIDE 3 - 25s]
+                    "Criamos a OrenAI. Não é uma IA genérica. Construímos uma Arquitetura Multi-Agentes desenhada para mineração. Um Agente Orquestrador recebe a demanda e aciona Subagentes Especialistas calibrados para minerais específicos. Se a busca é por ouro, apenas o subagente de ouro atua, tornando a resposta mais rápida, auditável e exata."
                 </aside>
             </section>
 
             <!-- Slide 4 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">Nossa IA Trabalha <span class="highlight">Com</span> Geólogos, Não Contra Eles</h2>
-                    <ul>
-                        <li><i class="fas fa-handshake"></i> Abordagem <b>Human-in-the-Loop</b>: Colaboração direta homem-máquina.</li>
-                        <li><i class="fas fa-robot"></i> A IA rastreia dados complexos, identifica oportunidades e explica o 'porquê'.</li>
-                        <li><i class="fas fa-user-check"></i> O especialista geólogo valida e permanece no centro absoluto da decisão.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">Soberania do Especialista</span>
+                        <h2 class="action-title">Human-in-the-Loop: A Máquina Calcula, o Humano Decide</h2>
+                        <ul>
+                            <li><i class="fas fa-calculator"></i> <b>Explicabilidade SHAP:</b> Decomposição matemática exata da influência de cada variável (ex: Cu, As, falhas).</li>
+                            <li><i class="fas fa-user-check"></i> <b>Soberania Humana:</b> O geólogo sênior audita a equação e tem poder de aprovar ou rejeitar o alvo.</li>
+                            <li><i class="fas fa-cubes"></i> <b>Visualização 2D & 3D:</b> Integração espacial com Three.js para exploração volumétrica de subsolo.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_04_human_in_the_loop.png" alt="Interface Human-in-the-Loop">
+                    </div>
                 </div>
                 <aside class="notes">
-                    "Nossa proposta é simples: a IA identifica oportunidades, explica suas conclusões e o geólogo permanece no centro da decisão. E o momento é agora. A demanda global por minerais críticos cresce rapidamente, enquanto a complexidade dos dados aumenta todos os anos.”
+                    [SLIDE 4 - 20s]
+                    "A OrenAI opera na fase preliminar de pesquisa. O sistema indica o alvo e abre a equação matemática através de explicabilidade SHAP. O geólogo avalia os dados na tela e toma a decisão soberana. A máquina calcula; o especialista humano decide."
                 </aside>
             </section>
 
             <!-- Slide 5 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">O Mercado Precisa Encontrar Mais Minerais Críticos Mais Rápido</h2>
-                    <ul>
-                        <li><i class="fas fa-globe"></i> Inseridos em um mercado global de exploração multibilionário.</li>
-                        <li><i class="fas fa-bullseye"></i> Foco inicial: Grandes mineradoras, consultorias e equipes de pesquisa.</li>
-                        <li><i class="fas fa-tachometer-alt"></i> Redução drástica de tempo, custo e risco exploratório.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">Foco Estratégico</span>
+                        <h2 class="action-title">Ouro, Cobre e Validação com Gigantes</h2>
+                        <ul>
+                            <li><i class="fas fa-coins"></i> <b>Metais Estratégicos:</b> Alta liquidez, transição energética e maior orçamento exploratório do país.</li>
+                            <li><i class="fas fa-handshake"></i> <b>Aura Minerals:</b> Interlocução técnica e diálogo comercial já iniciados.</li>
+                            <li><i class="fas fa-network-wired"></i> <b>Pipeline Corporativo:</b> Pontes de acesso estruturadas com <b>Vale S.A.</b> e <b>AngloGold Ashanti</b>.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_05_target_minerals.png" alt="Ouro e Cobre Minerais Alvo">
+                    </div>
                 </div>
                 <aside class="notes">
-                    “Estamos desenvolvendo a arquitetura conceitual da OrenAI com base em pesquisas recentes sobre exploração mineral, IA explicável e Human-in-the-Loop. Nosso foco inicial são empresas de mineração, consultorias geológicas e equipes de pesquisa mineral."
+                    [SLIDE 5 - 20s]
+                    "Iniciamos com foco em ouro e cobre, metais estratégicos e com demanda altíssima no Brasil. Já iniciamos diálogos reais com a Aura Minerals e temos mapeados acessos diretos às equipes de exploração da AngloGold Ashanti e da Vale."
                 </aside>
             </section>
 
             <!-- Slide 6 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">Construímos uma Arquitetura Focada em Transparência e Confiabilidade</h2>
-                    <ul>
-                        <li><i class="fas fa-cogs"></i> Pipeline robusto: Ingestão ➔ MAPDA ➔ XAI ➔ Geólogo.</li>
-                        <li><i class="fas fa-sync-alt"></i> Aprendizado Ativo: O feedback do geólogo treina a IA a ficar cada vez mais afiada.</li>
-                        <li><i class="fas fa-shield-alt"></i> Histórico auditável de todas as decisões e ajustes de parâmetros.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">Modelo & Mercado</span>
+                        <h2 class="action-title">Modelo de Negócios B2B SaaS Escalável</h2>
+                        <ul>
+                            <li><i class="fas fa-cloud"></i> <b>Licenciamento Anual (ARR):</b> Acesso à plataforma onde o cliente processa seus próprios dados sob sigilo.</li>
+                            <li><i class="fas fa-percentage"></i> <b>Margem Operacional >80%:</b> Custo de replicação de software quase nulo e custos de nuvem sob demanda.</li>
+                            <li><i class="fas fa-check-double"></i> <b>Validação Global:</b> A britânica <i>MINML</i> captou <b>€6 Milhões</b> com proposta equivalente na Europa.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_06_saas_market.png" alt="SaaS Global e Mercado Validado">
+                    </div>
                 </div>
                 <aside class="notes">
-                    "Estamos inseridos em um mercado global multibilionário que busca reduzir risco, custo e tempo na descoberta de novos depósitos. Nosso modelo de negócios combina licenciamento SaaS, assinaturas corporativas e serviços especializados de análise.”
+                    [SLIDE 6 - 20s]
+                    "Licenciamos o software diretamente para as equipes de geologia das mineradoras. O mercado é global e urgente: a MINML, concorrente britânica com proposta semelhante, captou recentemente 6 milhões de euros, comprovando o apetite de capital pelo setor."
                 </aside>
             </section>
 
             <!-- Slide 7 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">Da Pesquisa Mineral Para Toda a Cadeia Exploradora</h2>
-                    <ul>
-                        <li><i class="fas fa-cloud"></i> <b>Plataforma SaaS Corporativa:</b> Licenciamento flexível para equipes.</li>
-                        <li><i class="fas fa-briefcase"></i> <b>Análises Especializadas:</b> Serviços avançados sob demanda.</li>
-                        <li><i class="fas fa-chart-pie"></i> Diferencial de mercado baseado em pesquisa acadêmica validada.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">Impacto Financeiro</span>
+                        <h2 class="action-title">Retorno Imediato: A Prevenção que Salva Milhões</h2>
+                        <ul>
+                            <li><i class="fas fa-shield-alt"></i> <b>Preservação de CapEx:</b> 10 furos evitados = <b>US$ 1.000.000</b> devolvidos ao fluxo de caixa.</li>
+                            <li><i class="fas fa-bolt"></i> <b>Payback na 1ª Campanha:</b> O software se paga com apenas 1 a 2 perfurações estéreis eliminadas.</li>
+                            <li><i class="fas fa-crosshairs"></i> <b>Foco Cirúrgico:</b> Orçamento de sondagem concentrado nos 20% de alvos de altíssima confiança.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_07_savings_roi.png" alt="Economia Direta de CapEx e ROI">
+                    </div>
                 </div>
                 <aside class="notes">
-                    “Existem softwares de geologia e plataformas de análise mineral. Existem também modelos de IA para prospectividade mineral. Mas a maioria oferece apenas visualização de dados ou previsões pouco transparentes."
+                    [SLIDE 7 - 15s]
+                    "O retorno é imediato: evitando apenas 5 perfurações secas ao longo do ano, a mineradora economiza meio milhão de dólares no ato. O software se paga na primeira campanha."
                 </aside>
             </section>
 
             <!-- Slide 8 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">Nossa Vantagem é a Combinação: IA + Explicabilidade + Expertise Humana</h2>
-                    <ul>
-                        <li><i class="fas fa-times-circle" style="color:#e74c3c;"></i> Softwares comuns entregam apenas visualização de dados.</li>
-                        <li><i class="fas fa-times-circle" style="color:#e74c3c;"></i> Modelos preditivos de mercado são opacos e pouco explicáveis.</li>
-                        <li><i class="fas fa-check-circle" style="color:#2ecc71;"></i> <b>OrenAI:</b> Rastreabilidade total e aprendizado contínuo para multiplicar a capacidade analítica.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">Founder-Market Fit</span>
+                        <h2 class="action-title">Origem Técnica: Da Prática Operacional ao Código</h2>
+                        <ul>
+                            <li><i class="fas fa-hard-hat"></i> <b>Vivência em Mineração:</b> Fundador com formação técnica no setor vivenciou a dor real no campo.</li>
+                            <li><i class="fas fa-graduation-cap"></i> <b>Validação Geológica:</b> Concepção estruturada em conjunto com professores e especialistas do setor mineral.</li>
+                            <li><i class="fas fa-database"></i> <b>Data Bootstrap:</b> PoC calibrada sobre dados públicos abertos da CPRM, ANM e USGS.</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_08_technical_origin.png" alt="Origem e Founder-Market Fit">
+                    </div>
                 </div>
                 <aside class="notes">
-                    "A OrenAI nasce com um diferencial: integrar IA explicável, aprendizado contínuo baseado em especialistas e rastreabilidade das decisões em uma única plataforma. Não buscamos substituir o geólogo. Buscamos multiplicar sua capacidade de análise.”
+                    [SLIDE 8 - 20s]
+                    "A OrenAI não nasceu de suposições de laboratório. Um dos nossos fundadores tem formação técnica em mineração e vivenciou em campo a dor real dos furos estéreis, validando essa oportunidade com docentes da área antes de escrevermos a primeira linha de código."
                 </aside>
             </section>
 
             <!-- Slide 9 -->
             <section data-transition="slide">
-                <div class="glass-card slide-content">
-                    <h2 class="action-title">Estamos Construindo a Próxima Geração da Pesquisa Mineral</h2>
-                    <ul>
-                        <li><i class="fas fa-users"></i> Equipe técnica especializada em <b>Engenharia de Software</b> e IA.</li>
-                        <li><i class="fas fa-book-reader"></i> Base científica sólida (Arquitetura Conceitual publicada).</li>
-                        <li><i class="fas fa-rocket"></i> Focados em resolver o maior gargalo técnico da mineração moderna.</li>
-                    </ul>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <span class="badge">Capacidade Técnica</span>
+                        <h2 class="action-title">Engenharia de Software Aplicada à Geotecnologia</h2>
+                        <ul>
+                            <li><i class="fas fa-laptop-code"></i> <b>Arquitetura MAS:</b> Sistemas distribuídos, microsserviços e computação em nuvem resiliente.</li>
+                            <li><i class="fas fa-brain"></i> <b>Machine Learning & XAI:</b> Stacking ensembles, métricas espaciais e formulação SHAP.</li>
+                            <li><i class="fas fa-vr-cardboard"></i> <b>Visualização Espacial:</b> Engenharia de dados GIS PostGIS e motores 3D WebGL (Three.js).</li>
+                        </ul>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_09_engineering_team.png" alt="Equipe de Engenharia Multidisciplinar">
+                    </div>
                 </div>
                 <aside class="notes">
-                    “Somos uma equipe de Engenharia de Software desenvolvendo uma solução voltada para um dos maiores desafios da mineração moderna."
+                    [SLIDE 9 - 15s]
+                    "Somos uma equipe multidisciplinar unindo arquitetura de software, inteligência artificial e geotecnologia para resolver o gargalo de maior risco de capital da mineração."
                 </aside>
             </section>
 
             <!-- Slide 10 -->
             <section data-transition="zoom">
-                <div class="glass-card slide-content" style="text-align: center; align-items: center;">
-                    <div class="logo-text">Oren<span class="logo-ai">AI</span></div>
-                    <h2 class="action-title" style="text-align: center; margin-bottom: 30px;">Buscamos Parceiros para Transformar a OrenAI em Produto</h2>
-                    <ul style="display: inline-block; text-align: left;">
-                        <li><i class="fas fa-hand-holding-usd"></i> Parcerias estratégicas e institucionais.</li>
-                        <li><i class="fas fa-database"></i> Acesso a dados exploratórios reais para validação.</li>
-                        <li><i class="fas fa-laptop-code"></i> Aceleração da construção do Produto Mínimo Viável (MVP).</li>
-                    </ul>
-                    <p style="margin-top: 30px; font-weight: bold; color: #fff;">contato@orenai.com | orenai.com</p>
+                <div class="slide-grid">
+                    <div class="glass-card">
+                        <div class="logo-text">Oren<span class="logo-ai">AI</span></div>
+                        <h2 class="action-title" style="margin-bottom: 20px;">Acelere Conosco: O Futuro da Prospecção Mineral</h2>
+                        <ul>
+                            <li><i class="fas fa-check-circle" style="color: #2ecc71;"></i> <b>Gargalo Mapeado:</b> Queima de US$ 12 bilhões atacada com precisão algorítmica.</li>
+                            <li><i class="fas fa-check-circle" style="color: #2ecc71;"></i> <b>Tecnologia Pronta:</b> Arquitetura MAS + Three.js + MAPDA desenhada para produção.</li>
+                            <li><i class="fas fa-check-circle" style="color: #2ecc71;"></i> <b>Oportunidade:</b> Parcerias estratégicas para escalar pilotos e integração em campo.</li>
+                        </ul>
+                        <p style="margin-top: 24px; font-weight: 700; color: #fff; font-size: 0.85em;">
+                            <i class="fas fa-envelope" style="color: var(--primary-color);"></i> contato@orenai.com | <i class="fab fa-github" style="color: var(--primary-color);"></i> github.com/cauacreis/OrenAI
+                        </p>
+                    </div>
+                    <div class="media-frame">
+                        <img src="assets/slides/slide_10_call_to_action.png" alt="Acelere com a OrenAI">
+                    </div>
                 </div>
                 <aside class="notes">
-                    "Buscamos parceiros estratégicos, empresas do setor e instituições de pesquisa para acelerar validações, construção do MVP e acesso a dados reais. Nosso objetivo é transformar a OrenAI de uma arquitetura promissora em uma ferramenta utilizada na tomada de decisões exploratórias.”
+                    [SLIDE 10 - 20s]
+                    "Mapeamos um gargalo bilionário e construímos uma solução matemática, auditável e economicamente viável. Convidamos vocês a acelerarem conosco a transformação da exploração mineral sustentável. Muito obrigado."
                 </aside>
             </section>
 
@@ -286,7 +415,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
     
     <script>
-        // Try to initialize only when document is fully loaded
         document.addEventListener("DOMContentLoaded", function() {
             try {
                 Reveal.initialize({
@@ -299,7 +427,6 @@
                 });
             } catch (e) {
                 console.error("Erro ao inicializar o Reveal.js:", e);
-                // Fallback de exibição caso o JS falhe
                 document.querySelector('.reveal').style.display = 'block';
                 document.querySelector('.slides').style.display = 'block';
                 const sections = document.querySelectorAll('section');

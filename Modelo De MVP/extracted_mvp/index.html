@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OrenAI | MAPDA Preview</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="browser-frame" aria-label="Prévia web OrenAI">
+      <div class="app-shell">
+        <aside class="sidebar" aria-label="Fluxo OrenAI">
+          <div class="brand">
+            <div class="brand-mark">
+              <img src="./assets/orenai-logo.png?v=4" alt="OrenAI" />
+            </div>
+            <span>Mineral Intelligence</span>
+          </div>
+
+          <section class="sidebar-section">
+            <p class="eyebrow">Workflow</p>
+            <button class="nav-item active" type="button" data-view="analysis">
+              <i data-lucide="activity"></i>
+              <span>
+                <strong>Análise MAPDA</strong>
+                <small>Rodada atual</small>
+              </span>
+            </button>
+            <button class="nav-item" type="button" data-view="upload">
+              <i data-lucide="upload-cloud"></i>
+              <span>
+                <strong>Upload geoquímico</strong>
+                <small>CSV / JSON</small>
+              </span>
+            </button>
+            <button class="nav-item" type="button" data-view="review">
+              <i data-lucide="check-circle-2"></i>
+              <span>
+                <strong>Revisão HITL</strong>
+                <small>7 pendentes</small>
+              </span>
+            </button>
+            <button class="nav-item" type="button" data-view="report">
+              <i data-lucide="file-check-2"></i>
+              <span>
+                <strong>Relatório</strong>
+                <small>Demo comercial</small>
+              </span>
+            </button>
+          </section>
+
+          <section class="sidebar-section drivers">
+            <p class="eyebrow">Drivers do alvo</p>
+            <article>
+              <span>Au + As</span>
+              <strong>+42%</strong>
+            </article>
+            <article>
+              <span>Cu / Zn</span>
+              <strong>+18%</strong>
+            </article>
+            <article>
+              <span>Ruído espacial</span>
+              <strong class="negative">-9%</strong>
+            </article>
+          </section>
+        </aside>
+
+        <main class="main-panel">
+          <header class="page-header">
+            <div>
+              <p class="section-label">Prospecção mineral</p>
+              <h1>MAPDA Geological Analysis</h1>
+            </div>
+            <div class="header-actions">
+              <button class="ghost-button" type="button" id="uploadButton">
+                <i data-lucide="file-up"></i>
+                Importar CSV
+              </button>
+              <button class="primary-button" type="button" id="runAnalysisButton">
+                <i data-lucide="sparkles"></i>
+                Rodar análise
+              </button>
+              <button class="ghost-button" type="button" id="reportButton">
+                <i data-lucide="file-text"></i>
+                Gerar relatório
+              </button>
+              <input id="fileInput" type="file" accept=".csv,.json" hidden />
+            </div>
+          </header>
+
+          <section class="scenario-strip" aria-label="Cenários de análise">
+            <button class="scenario-option active" type="button" data-scenario="base">
+              <span>Base Case</span>
+              <strong>Modelo calibrado</strong>
+            </button>
+            <button class="scenario-option" type="button" data-scenario="upside">
+              <span>Exploratório</span>
+              <strong>Mais sensível</strong>
+            </button>
+            <button class="scenario-option" type="button" data-scenario="conservative">
+              <span>Conservador</span>
+              <strong>Menos falso positivo</strong>
+            </button>
+          </section>
+
+          <section class="metric-row" aria-label="Indicadores principais">
+            <article>
+              <span>Alvos priorizados</span>
+              <strong id="targetCount">24</strong>
+              <small>+6 vs rodada anterior</small>
+            </article>
+            <article>
+              <span>Anomalias fortes</span>
+              <strong id="strongCount">7</strong>
+              <small>Au, As e Cu dominantes</small>
+            </article>
+            <article>
+              <span>Confiança MAPDA</span>
+              <strong id="confidenceRange">68% - 91%</strong>
+              <small>intervalo estimado</small>
+            </article>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="chart-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>Prospectivity Score</h2>
+                  <p>Ranking espacial com faixa de confiança e pontos revisados pelo geólogo.</p>
+                </div>
+                <div class="legend" aria-label="Legenda do gráfico">
+                  <span><b class="line-dot"></b> Score MAPDA</span>
+                  <span><b class="dash-dot"></b> Baseline</span>
+                  <span><b class="range-dot"></b> Confiança</span>
+                </div>
+              </div>
+              <div class="chart-wrap">
+                <canvas id="prospectivityChart" width="980" height="380" aria-label="Gráfico de prospectividade"></canvas>
+              </div>
+            </article>
+
+            <article class="summary-panel">
+              <div class="panel-header compact">
+                <div>
+                  <h2>Análise atual</h2>
+                  <p id="datasetName">Dataset: geoquímica_demo.csv</p>
+                </div>
+              </div>
+
+              <div class="upload-drop" id="dropZone">
+                <i data-lucide="database"></i>
+                <strong>CSV geoquímico pronto</strong>
+                <span id="datasetSummary">128 amostras · 11 variáveis · coordenadas válidas</span>
+              </div>
+
+              <div class="pipeline-list" aria-label="Pipeline da análise">
+                <div class="pipeline-step done" data-step="upload">
+                  <i data-lucide="check"></i>
+                  <span>
+                    <strong>Ingestão</strong>
+                    <small>dataset validado</small>
+                  </span>
+                </div>
+                <div class="pipeline-step active" data-step="analysis">
+                  <i data-lucide="activity"></i>
+                  <span>
+                    <strong>MAPDA</strong>
+                    <small>modelo calibrado</small>
+                  </span>
+                </div>
+                <div class="pipeline-step" data-step="report">
+                  <i data-lucide="file-text"></i>
+                  <span>
+                    <strong>Relatório</strong>
+                    <small>aguardando revisão</small>
+                  </span>
+                </div>
+              </div>
+
+              <div class="quality-list">
+                <div>
+                  <span>Integridade</span>
+                  <strong id="integrityScore">96%</strong>
+                </div>
+                <div>
+                  <span>Outliers brutos</span>
+                  <strong id="outlierCount">14</strong>
+                </div>
+                <div>
+                  <span>Feedback HITL</span>
+                  <strong id="reviewedCount">3 / 7</strong>
+                </div>
+              </div>
+
+              <div class="report-card" id="reportCard">
+                <span>Último evento</span>
+                <p>MAPDA detectou concentração anômala em amostras com Au, As e Cu acima do background regional.</p>
+              </div>
+            </article>
+          </section>
+
+          <section class="terrain-grid" id="heatmap" aria-label="Mapa de calor e interpretação espacial">
+            <article class="heatmap-panel">
+              <div class="panel-header">
+                <div>
+                  <h2>Mapa de calor do terreno</h2>
+                  <p>Simulação espacial com superfície 2D e leitura 3D do subsolo.</p>
+                </div>
+                <div class="map-toolbar">
+                  <div class="map-controls" role="group" aria-label="Modo de visualizacao do terreno">
+                    <button class="map-chip active" type="button" data-map-view="surface">Superficie 2D</button>
+                    <button class="map-chip" type="button" data-map-view="subsurface">Subsolo 3D</button>
+                  </div>
+                  <div class="map-controls" role="group" aria-label="Camadas do mapa">
+                    <button class="map-chip active" type="button" data-layer="prospectivity">Score</button>
+                    <button class="map-chip" type="button" data-layer="geochemistry">Geoquimica</button>
+                    <button class="map-chip" type="button" data-layer="risk">Risco</button>
+                  </div>
+                </div>
+              </div>
+              <div class="heatmap-wrap">
+                <canvas id="terrainHeatmap" width="920" height="420" aria-label="Mapa de calor de superfície e subsolo"></canvas>
+                <div id="subsurfaceViewport" class="subsurface-viewport" aria-label="Visualização 3D do subsolo" hidden></div>
+              </div>
+            </article>
+
+            <article class="insight-panel">
+              <div class="panel-header compact">
+                <div>
+                  <h2>Leitura executiva</h2>
+                  <p>O que a demo quer provar em 2 minutos.</p>
+                </div>
+              </div>
+
+              <div class="insight-list">
+                <article>
+                  <span class="insight-kicker">Zona A</span>
+                  <strong>Hotspot norte-leste</strong>
+                  <p>Score alto por coocorrência Au + As, baixa penalização de ruído e boa continuidade espacial.</p>
+                </article>
+                <article>
+                  <span class="insight-kicker warning">Atenção</span>
+                  <strong>Falso positivo provável</strong>
+                  <p>Faixa sudoeste tem resposta química forte, mas baixa consistência entre amostras vizinhas.</p>
+                </article>
+                <article>
+                  <span class="insight-kicker success">Próxima ação</span>
+                  <strong>Revisar 7 amostras</strong>
+                  <p>O geólogo confirma ou rejeita os alvos antes do relatório comercial.</p>
+                </article>
+              </div>
+            </article>
+          </section>
+
+          <section class="table-panel" id="review">
+            <div class="panel-header">
+              <div>
+                <h2>Alvos prioritários por amostra</h2>
+                <p>Fila de revisão humana antes do relatório final.</p>
+              </div>
+              <button class="ghost-button small" type="button" id="resetButton">
+                <i data-lucide="rotate-ccw"></i>
+                Resetar revisão
+              </button>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Amostra</th>
+                    <th>Região</th>
+                    <th>Score</th>
+                    <th>Fatores SHAP</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody id="targetRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <dialog class="report-dialog" id="reportDialog" aria-labelledby="reportTitle">
+      <form method="dialog">
+        <div class="dialog-header">
+          <div>
+            <span class="section-label">Relatório simulado</span>
+            <h2 id="reportTitle">OrenAI MAPDA Brief</h2>
+          </div>
+          <button class="icon-action" type="submit" aria-label="Fechar relatório">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="report-summary" id="reportSummary"></div>
+
+        <div class="dialog-actions">
+          <button class="ghost-button" type="button" id="downloadReportButton">
+            <i data-lucide="download"></i>
+            Baixar .txt
+          </button>
+          <button class="primary-button" type="submit">
+            <i data-lucide="check"></i>
+            Fechar
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "./assets/three.module.js",
+          "three/addons/": "./assets/three-addons/"
+        }
+      }
+    </script>
+    <script src="./assets/lucide.min.js"></script>
+    <script src="./app.js"></script>
+    <script type="module" src="./subsurface-three.js"></script>
+  </body>
+</html>

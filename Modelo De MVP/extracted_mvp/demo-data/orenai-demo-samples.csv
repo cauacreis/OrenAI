@@ -1,0 +1,25 @@
+sample_id,region,x,y,au_ppb,as_ppm,cu_ppm,zn_ppm,fe_pct,mn_ppm,terrain_slope,notes
+AM-001,Crixas Norte,712300,8234100,18,42,61,83,4.2,390,12,background
+AM-002,Crixas Norte,712640,8234380,24,51,74,88,4.8,412,14,weak anomaly
+AM-003,Crixas Norte,713020,8234620,37,68,92,101,5.1,438,16,au-as trend
+AM-004,Crixas Norte,713460,8234860,46,81,118,126,5.4,470,15,priority halo
+AM-005,Crixas Norte,713820,8235120,59,96,142,135,5.8,501,18,priority core
+AM-006,Serra Verde,708900,8231200,15,28,58,146,3.9,620,8,zinc background
+AM-007,Jales Oeste,706420,8228800,32,77,55,189,4.6,710,22,noisy response
+AM-008,Serra Verde,709260,8231460,21,34,64,172,4.1,650,10,zinc lead halo
+AM-009,Serra Verde,709620,8231720,26,41,70,195,4.2,684,11,zinc lead halo
+AM-010,Porongos,711220,8230200,14,45,132,86,6.2,530,19,copper trend
+AM-011,Porongos,711640,8230480,19,52,148,93,6.5,548,21,copper trend
+AM-012,Porongos,712040,8230760,27,61,161,99,6.8,571,23,copper arsenic
+AM-013,Lateritinga,710100,8235300,35,58,84,111,7.2,820,9,laterite cap
+AM-014,Lateritinga,710480,8235580,43,64,90,118,7.8,910,11,laterite cap
+AM-015,Lateritinga,710860,8235860,51,70,101,126,8.1,970,12,laterite cap
+AM-016,Cristalina Sul,715220,8229820,11,25,174,77,5.9,420,17,cu-mo trend
+AM-017,Cristalina Sul,715640,8230100,13,29,188,82,6.1,435,18,cu-mo trend
+AM-018,Serra Verde,709980,8231980,29,44,76,216,4.4,702,12,confirmed target
+AM-019,Crixas Norte,714180,8235360,67,108,156,143,6.0,520,20,priority core
+AM-020,Crixas Norte,714560,8235600,72,116,162,151,6.3,536,19,priority core
+AM-021,Jales Oeste,706820,8229080,38,84,60,201,4.8,735,24,noisy response
+AM-022,Jales Oeste,707180,8229360,41,89,64,215,5.0,760,26,noisy response
+AM-023,Crixas Norte,714920,8235880,79,124,171,158,6.5,552,21,priority core
+AM-024,Crixas Norte,715300,8236140,88,136,184,166,6.8,578,22,best target

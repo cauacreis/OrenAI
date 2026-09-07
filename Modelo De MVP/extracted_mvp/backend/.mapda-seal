@@ -1,0 +1,4 @@
+schema=orenai.mapda.owner_seal.v1
+encoding=base64url_sha256
+payload=mvRSI5pTrGWwppjH6hCXEk87zugls_r4HWDpp8yVhRI
+hint=private watermark; plaintext owner name is intentionally not stored

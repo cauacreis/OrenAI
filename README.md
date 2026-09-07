@@ -20,6 +20,20 @@ A **OrenAI** é um software B2B SaaS que utiliza Inteligência Artificial para i
 
 ---
 
+## 📈 Validação de Mercado e Tração
+
+Para garantir que a OrenAI resolva problemas reais de alta complexidade (como a epidemia de *Dry Holes* e Falsos Positivos na mineração), possuímos um **ambiente favorável e acesso potencial a profissionais-chave** nas maiores gigantes do setor global, permitindo uma validação técnica de altíssimo nível. Nossa rede estratégica engloba:
+
+- 🥇 **Vale S.A.** (B3 / NYSE)
+- 🥈 **AngloGold Ashanti** (NYSE)
+- 🥉 **Aura Minerals** (B3 / TSX)
+- 4️⃣ **Ero Copper** (TSX / NYSE)
+- 5️⃣ **Hochschild Mining** (LSE)
+
+Isso assegura que a arquitetura seja validada por quem dita as regras do mercado, cobrindo operações desde o Brasil até a América do Norte.
+
+---
+
 ## 🏗️ Arquitetura do Sistema
 
 A OrenAI organiza-se em 5 camadas modulares e desacopladas:

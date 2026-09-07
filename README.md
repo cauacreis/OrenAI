@@ -82,35 +82,74 @@ A OrenAI organiza-se em 5 camadas modulares e desacopladas:
 OrenAI/
 ├── .gitignore                      # Configuração de arquivos ignorados
 ├── README.md                       # Documentação principal e visão geral
-├── OrenAI_Pitch_Deck.html          # Apresentação executiva interativa
+├── OrenAI_Pitch_Deck.html          # Apresentação executiva interativa (Reveal.js)
 ├── Pitch_OrenAI_Final.pptx         # Apresentação em slides PowerPoint
 ├── assets/
-│   └── diagrams/                   # Diagramas em alta resolução (300 DPI)
-│       ├── diagrama_arquitetura_mas_moe.png
-│       ├── diagrama_fluxo_multiagente.png
-│       └── diagrama_der_logico.png
-├── docs/                           # Documentação técnica e acadêmica
+│   ├── diagrams/                   # Diagramas de arquitetura e engenharia (300 DPI)
+│   │   ├── diagrama_arquitetura_mas_moe.png
+│   │   ├── diagrama_arquitetura_tecnologica.png
+│   │   ├── diagrama_der_logico.png
+│   │   ├── diagrama_fluxo_multiagente.png
+│   │   └── diagrama_fluxo_operacional.png
+│   └── slides/                     # 10 imagens fotorrealistas de suporte ao pitch
+│       ├── slide_01_drill_cost.png
+│       ├── slide_02_blackbox_ai.png
+│       └── ...
+├── docs/                           # Documentação técnica, científica e de mercado
 │   ├── ARCHITECTURE.md             # Especificação arquitetural de engenharia MAS
+│   ├── BUSINESS_MODEL.md           # Estratégia de monetização B2B SaaS e Unit Economics
+│   ├── MARKET_DATA_DRY_HOLES.md    # Dossiê auditado: US$ 12.4B e o custo dos furos secos
+│   ├── PITCH_DEFENSE_QNA.md        # Q&A estratégico para bancas e investidores
+│   ├── GEOAI_GLOBAL_BENCHMARKS.md  # Estado da arte: Stanford Mineral-X, GTK, papers e repos
+│   ├── PITCH_SCRIPT.md             # Roteiro oficial de apresentação em 3 minutos
 │   ├── Documento de Especificação do Projeto Integrador.docx # Documento Word oficial
 │   └── Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf # Laudo diagramado em PDF
 └── Modelo De MVP/                  # Protótipos funcionais
-    ├── extracted_mvp/              # Código do protótipo web
-    └── orenai-mapda-mvp-three-...zip # Protótipo demonstrativo com Three.js
+    ├── extracted_mvp/              # Aplicação web estática (2D Heatmap & Subsolo 3D Three.js)
+    │   ├── index.html              # Interface do dashboard
+    │   ├── app.js                  # Lógica do workflow e simulação MAPDA
+    │   ├── subsurface-three.js     # Renderizador 3D WebGL de subsuperfície
+    │   ├── TUTORIAL-USO.md         # Tutorial de navegação e teste
+    │   └── demo-data/              # Datasets demonstrativo e real da USGS
+    └── orenai-mapda-mvp-three-...zip # Pacote ZIP do protótipo
 ```
 
 ---
 
 ## 🚀 Como Iniciar
 
-1. **Explorar a Especificação Completa:**
-   - Consulte [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) para aprofundar na engenharia do sistema multiagente.
-   - Consulte o laudo acadêmico oficial em [`docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf`](docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf).
-2. **Visualizar os Diagramas de Engenharia:**
-   - [Diagrama de Arquitetura Multi-Agentes](assets/diagrams/diagrama_arquitetura_mas_moe.png)
-   - [Diagrama de Atividades e Fluxo HITL](assets/diagrams/diagrama_fluxo_multiagente.png)
-   - [Modelo Lógico de Dados DER (3FN)](assets/diagrams/diagrama_der_logico.png)
-3. **Protótipo 3D:**
-   - Navegue até `Modelo De MVP/extracted_mvp/` para interagir com a renderização de subsuperfície com Three.js.
+### 1. Executar o Protótipo Web 3D (MVP Local)
+O protótipo é uma aplicação estática e não exige instalação de dependências pesadas. Para rodar em um servidor local:
+
+```bash
+# Opção A: Via Node.js (npx)
+npx serve "Modelo De MVP/extracted_mvp" -p 8787
+
+# Opção B: Via Python
+python -m http.server 8787 --directory "Modelo De MVP/extracted_mvp"
+```
+
+Acesse no navegador:
+- **Painel Principal & Superfície 2D:** [http://127.0.0.1:8787/](http://127.0.0.1:8787/)
+- **Visualização Volumétrica 3D do Subsolo:** [http://127.0.0.1:8787/#subsurface](http://127.0.0.1:8787/#subsurface)
+- **Datasets de Teste Inclusos:**
+  - `demo-data/orenai-demo-samples.csv`: Amostras com correlações Au/As/Cu para demonstração de workflow;
+  - `demo-data/orenai-usgs-soil-real-sample.csv`: Amostras geoquímicas reais extraídas da base pública USGS DS-801.
+
+### 2. Aprofundar na Documentação Estratégica e Técnica
+- **Arquitetura de Software e MAS:** [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- **Modelo de Negócios e Monetização SaaS:** [`docs/BUSINESS_MODEL.md`](docs/BUSINESS_MODEL.md)
+- **Dossiê do Mercado e Furos Secos:** [`docs/MARKET_DATA_DRY_HOLES.md`](docs/MARKET_DATA_DRY_HOLES.md)
+- **Defesa Estratégica e Q&A para Investidores:** [`docs/PITCH_DEFENSE_QNA.md`](docs/PITCH_DEFENSE_QNA.md)
+- **Catálogo de Benchmarks Globais em GeoAI:** [`docs/GEOAI_GLOBAL_BENCHMARKS.md`](docs/GEOAI_GLOBAL_BENCHMARKS.md)
+- **Roteiro do Pitch e Apresentação Executiva:** [`docs/PITCH_SCRIPT.md`](docs/PITCH_SCRIPT.md) e [`OrenAI_Pitch_Deck.html`](OrenAI_Pitch_Deck.html)
+- **Laudo Acadêmico Oficial:** [`docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf`](docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf)
+
+### 3. Diagramas de Engenharia
+- [Diagrama de Arquitetura Multi-Agentes (MAS / MoE)](assets/diagrams/diagrama_arquitetura_mas_moe.png)
+- [Diagrama de Atividades e Fluxo HITL](assets/diagrams/diagrama_fluxo_multiagente.png)
+- [Modelo Lógico de Dados DER (3FN)](assets/diagrams/diagrama_der_logico.png)
+
 
 ---
 

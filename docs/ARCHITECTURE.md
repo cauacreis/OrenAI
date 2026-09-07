@@ -118,3 +118,14 @@ O banco de dados relacional está estruturado no **PostgreSQL 16 com extensão P
 ### 6.2 Fosso Competitivo (*Moat*)
 - **Diferencial Geológico Tropical:** Concorrentes estrangeiros (como a *MINML* do Reino Unido) utilizam algoritmos treinados para solos de clima temperado/glacial (Canadá, Escandinávia). Quando aplicados no Brasil, esses modelos falham devido ao intemperismo profundo e lixiviação dos regolitos tropicais. A OrenAI é calibrada e treinada nativamente para anomalias em solos tropicais brasileiros.
 - **Rede de Validação:** Interlocuções e contatos mapeados junto a mineradoras atuantes no Brasil (*Aura Minerals*, *Vale*, *AngloGold Ashanti*, *Ero Copper*).
+
+---
+
+## 7. Documentos Complementares
+
+- **Modelo de Negócios e Monetização:** Consulte [`docs/BUSINESS_MODEL.md`](BUSINESS_MODEL.md) para análise de unit economics, EaaS, SaaS e royalties NSR.
+- **Estatísticas de Mercado e Furos Secos:** Consulte [`docs/MARKET_DATA_DRY_HOLES.md`](MARKET_DATA_DRY_HOLES.md) para os dados auditados da S&P Global e MinEx Consulting.
+- **Defesa Estratégica e Q&A:** Consulte [`docs/PITCH_DEFENSE_QNA.md`](PITCH_DEFENSE_QNA.md) para respostas técnicas e mercadológicas a investidores.
+- **Benchmarks Globais em GeoAI:** Consulte [`docs/GEOAI_GLOBAL_BENCHMARKS.md`](GEOAI_GLOBAL_BENCHMARKS.md) para a relação de laboratórios internacionais e repositórios abertos.
+- **Roteiro de Apresentação Executiva:** Consulte [`docs/PITCH_SCRIPT.md`](PITCH_SCRIPT.md) para o roteiro do pitch em 3 minutos e slides visuais.
+

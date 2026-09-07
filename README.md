@@ -97,6 +97,8 @@ OrenAI/
 │       └── ...
 ├── docs/                           # Documentação técnica, científica e de mercado
 │   ├── ARCHITECTURE.md             # Especificação arquitetural de engenharia MAS
+│   ├── IMPLEMENTATION_ROADMAP.md   # Plano diretor em 6 fases, monorepo e especificação de engenharia
+│   ├── LITERATURE_REVIEW_MPM_XAI.md # Revisão bibliográfica: Zuo et al., Caers, SHAP e regolitos tropicais
 │   ├── BUSINESS_MODEL.md           # Estratégia de monetização B2B SaaS e Unit Economics
 │   ├── MARKET_DATA_DRY_HOLES.md    # Dossiê auditado: US$ 12.4B e o custo dos furos secos
 │   ├── PITCH_DEFENSE_QNA.md        # Q&A estratégico para bancas e investidores
@@ -138,6 +140,8 @@ Acesse no navegador:
 
 ### 2. Aprofundar na Documentação Estratégica e Técnica
 - **Arquitetura de Software e MAS:** [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- **Roadmap de Implementação e Engenharia:** [`docs/IMPLEMENTATION_ROADMAP.md`](docs/IMPLEMENTATION_ROADMAP.md)
+- **Revisão Bibliográfica e Fundamentação Científica:** [`docs/LITERATURE_REVIEW_MPM_XAI.md`](docs/LITERATURE_REVIEW_MPM_XAI.md)
 - **Modelo de Negócios e Monetização SaaS:** [`docs/BUSINESS_MODEL.md`](docs/BUSINESS_MODEL.md)
 - **Dossiê do Mercado e Furos Secos:** [`docs/MARKET_DATA_DRY_HOLES.md`](docs/MARKET_DATA_DRY_HOLES.md)
 - **Defesa Estratégica e Q&A para Investidores:** [`docs/PITCH_DEFENSE_QNA.md`](docs/PITCH_DEFENSE_QNA.md)

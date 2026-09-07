@@ -123,6 +123,8 @@ O banco de dados relacional está estruturado no **PostgreSQL 16 com extensão P
 
 ## 7. Documentos Complementares
 
+- **Roadmap de Implementação e Engenharia:** Consulte [`docs/IMPLEMENTATION_ROADMAP.md`](IMPLEMENTATION_ROADMAP.md) para o plano diretor em 6 fases e estrutura de monorepo.
+- **Revisão Bibliográfica e Fundamentação Científica:** Consulte [`docs/LITERATURE_REVIEW_MPM_XAI.md`](LITERATURE_REVIEW_MPM_XAI.md) para o estado da arte acadêmico em MPM, XAI e regolitos tropicais.
 - **Modelo de Negócios e Monetização:** Consulte [`docs/BUSINESS_MODEL.md`](BUSINESS_MODEL.md) para análise de unit economics, EaaS, SaaS e royalties NSR.
 - **Estatísticas de Mercado e Furos Secos:** Consulte [`docs/MARKET_DATA_DRY_HOLES.md`](MARKET_DATA_DRY_HOLES.md) para os dados auditados da S&P Global e MinEx Consulting.
 - **Defesa Estratégica e Q&A:** Consulte [`docs/PITCH_DEFENSE_QNA.md`](PITCH_DEFENSE_QNA.md) para respostas técnicas e mercadológicas a investidores.

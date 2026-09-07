@@ -6,6 +6,7 @@
 [![XAI](https://img.shields.io/badge/Explainability-SHAP-success.svg)](#)
 [![HITL](https://img.shields.io/badge/Human--in--the--Loop-Active%20Learning-orange.svg)](#)
 [![3D](https://img.shields.io/badge/3D%20Visualization-Three.js-black.svg)](#)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary%20%7C%20All%20Rights%20Reserved-red.svg)](LICENSE)
 
 ---
 
@@ -105,6 +106,16 @@ OrenAI/
 - **Gabryel Rodrigues:** Engenheiro de Machine Learning / MAPDA & XAI
 - **Roger Prado:** Engenheiro de Dados & Requisitos Geológicos
 - **Rafael Farias:** Engenheiro de Frontend & Visualização 3D (Three.js)
+
+---
+
+## 📜 Licença e Propriedade Intelectual
+
+Este projeto é protegido por **Licença Proprietária (Source-Available / Todos os Direitos Reservados)**.
+
+- O repositório é público **exclusivamente para fins de visualização, auditoria acadêmica e demonstração de competência técnica**.
+- **É expressamente PROIBIDA** a cópia, redistribuição, engenharia reversa, implantação operacional ou uso comercial deste código-fonte, arquitetura multiagente e modelos de IA por terceiros para proveito próprio sem autorização expressa e por escrito dos autores.
+- Para maiores detalhes, consulte o arquivo [LICENSE](LICENSE).
 
 ---
 *OrenAI — Engenharia de Software aplicada à Geotecnologia e Pesquisa Mineral.*

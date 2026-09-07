@@ -1,0 +1,42 @@
+MIT? NÃO. LICENÇA PROPRIETÁRIA — SOURCE-AVAILABLE
+Copyright (c) 2026 Cauã Felype & Equipe OrenAI. Todos os direitos reservados.
+
+PROPRIETARY SOURCE-AVAILABLE & VIEW-ONLY LICENSE
+
+Este repositório e todo o seu conteúdo — incluindo, mas não se limitando a: código-fonte,
+arquitetura de software, diagramas conceituais, especificações técnicas, modelos preditivos
+do Módulo MAPDA, algoritmos dos agentes especialistas, scripts e materiais do projeto OrenAI —
+são disponibilizados publicamente de forma SOURCE-AVAILABLE exclusivamente para fins de
+VISUALIZAÇÃO, AUDITORIA ACADÊMICA e DEMONSTRAÇÃO DE PORTFÓLIO TÉCNICO.
+
+1. TITULARIDADE E RESERVA INTEGRAL DE DIREITOS
+Todos os direitos patrimoniais, direitos autorais, segredos de negócio e propriedade
+intelectual sobre a plataforma OrenAI pertencem de forma exclusiva aos seus autores
+(Cauã Felype e equipe OrenAI). Nenhum direito de exploração comercial, cópia ou
+reutilização é transferido ou licenciado através do acesso público a este repositório.
+
+2. RESTRIÇÕES E USOS EXPRESSAMENTE PROIBIDOS
+É estritamente PROIBIDO a qualquer terceiro (pessoa física ou jurídica), sem autorização
+prévia, expressa e escrita dos titulares dos direitos:
+  a) Copiar, clonar, reproduzir, incorporar ou redistribuir total ou parcialmente este
+     software, documentação ou arquitetura;
+  b) Utilizar este código, seus modelos de IA ou sua lógica de orquestração para uso
+     próprio, seja corporativo, comercial, educacional institucional ou operacional;
+  c) Modificar, adaptar, fazer engenharia reversa ou criar trabalhos e produtos derivados
+     com base na solução OrenAI;
+  d) Comercializar, licenciar, sublicenciar, vender, revender, alugar ou explorar
+     economicamente o software ou serviços inspirados/derivados desta propriedade;
+  e) Hospedar, implantar em servidores próprios ou nuvem (AWS, GCP, Azure, etc.)
+     instâncias funcionais do sistema ou de qualquer um dos seus agentes.
+
+3. USOS PERMITIDOS
+O acesso público a este repositório confere unicamente a permissão de:
+  a) Leitura, inspeção e avaliação do código-fonte para bancas acadêmicas, docentes,
+     recrutadores e auditoria técnica de competência profissional;
+  b) Citação em trabalhos científicos acadêmicos, com obrigatoriedade estrita de atribuição
+     dos créditos de autoria e indicação do repositório oficial.
+
+A VIOLAÇÃO DESTES TERMOS SUJEITA O INFRATOR ÀS SANÇÕES CIVIS E CRIMINAIS PREVISTAS NA
+LEGISLAÇÃO DE DIREITOS AUTORAIS E PROTEÇÃO DE SOFTWARE (LEI BRASILEIRA Nº 9.610/1998 E
+LEI Nº 9.609/1998), BEM COMO TRATADOS INTERNACIONAIS DE PROPRIEDADE INTELECTUAL (CONVENÇÃO
+DE BERNA E ACORDO TRIPS/OMC).

@@ -1,7 +1,7 @@
 # OrenAI 🌍⛏️
 **Plataforma SaaS B2B de Mapeamento de Prospectividade Mineral (MPM) baseada em Arquitetura Multi-Agentes (MAS)**
 
-[![Status](https://img.shields.io/badge/Status-Fase%2001%20(4º%20Período)-blue.svg)](#)
+[![Status](https://img.shields.io/badge/Status-Fase%2002%20(4º%20Período)-blue.svg)](#)
 [![Architecture](https://img.shields.io/badge/Architecture-Multi--Agent%20(MAS)%20%7C%20MoE-purple.svg)](#)
 [![XAI](https://img.shields.io/badge/Explainability-SHAP-success.svg)](#)
 [![HITL](https://img.shields.io/badge/Human--in--the--Loop-Active%20Learning-orange.svg)](#)
@@ -62,6 +62,19 @@ A OrenAI organiza-se em 5 camadas modulares e desacopladas:
 5. **Explicabilidade XAI:** SHAP decompõe a contribuição matemática de cada atributo;
 6. **Interface HITL (2D & 3D):** Geólogo inspeciona alvos no mapa 2D e modelo 3D em Three.js, aprovando ou rejeitando;
 7. **Active Learning:** Alvos rejeitados retornam ao Agente Gestor para retreinamento incremental do subagente.
+
+---
+
+## 🧪 Provas de Conceito e Experimentações Técnicas (Fase 02)
+
+Na Fase 02 do 4º Período, a equipe conduziu **4 experimentações técnicas práticas** e provas de conceito para mitigar riscos de viabilidade arquitetural:
+
+![Quadro Consolidado de Experimentações da Fase 02](assets/diagrams/diagrama_experimentacoes_fase02.png)
+
+1. **Ingestão & Sanitização Geoquímica (Python / Pandas / Pydantic v2):** Ingestão e validação de 1.000 amostras reais de solo da base oficial *USGS Data Series 801* em **118 ms** (throughput de 8.470 linhas/s), validação de coordenadas geográficas e tratamento determinístico de teores censurados abaixo do limite analítico ($<LD \rightarrow LD/2$).
+2. **Detecção de Anomalias Multivariadas (Módulo MAPDA Preliminar):** Algoritmo *Isolation Forest* com *RobustScaler* sobre associações de elementos-guia (*pathfinders* Au-As-Sb e Cu-Mo-Fe) com tempo de inferência inferior a **350 ms** para 1.000 amostras e ROC-AUC simulada de **0,91**.
+3. **Explicabilidade Algorítmica (Módulo XAI):** Benchmark experimental comprovando que o **TreeSHAP** é **28x mais rápido** que o *KernelSHAP* (85 ms vs. 2.450 ms por amostra) com 60% menos memória, permitindo auditoria matemática em tempo real no dashboard.
+4. **Visualização 3D de Subsuperfície em Three.js & HITL:** Renderizador WebGL com *OrbitControls*, nuvens de pontos e volumes elipsoidais translúcidos operando a **60 FPS estáveis** no navegador, integrado a botões de decisão *Human-in-the-Loop* com callback < 16 ms.
 
 ---
 
@@ -147,9 +160,12 @@ Acesse no navegador:
 - **Defesa Estratégica e Q&A para Investidores:** [`docs/PITCH_DEFENSE_QNA.md`](docs/PITCH_DEFENSE_QNA.md)
 - **Catálogo de Benchmarks Globais em GeoAI:** [`docs/GEOAI_GLOBAL_BENCHMARKS.md`](docs/GEOAI_GLOBAL_BENCHMARKS.md)
 - **Roteiro do Pitch e Apresentação Executiva:** [`docs/PITCH_SCRIPT.md`](docs/PITCH_SCRIPT.md) e [`OrenAI_Pitch_Deck.html`](OrenAI_Pitch_Deck.html)
-- **Laudo Acadêmico Oficial:** [`docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf`](docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf)
+- **Laudo Acadêmico Oficial (Fase 02 — Experimentação Técnica):** [`docs/Documento_de_Especificacao_OrenAI_Fase02_4Periodo.pdf`](docs/Documento_de_Especificacao_OrenAI_Fase02_4Periodo.pdf)
+- **Documento Word de Especificação (Editável):** [`docs/Documento de Especificação do Projeto Integrador.docx`](docs/Documento%20de%20Especificação%20do%20Projeto%20Integrador.docx)
+- **Laudo Anterior (Fase 01):** [`docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf`](docs/Documento_de_Especificacao_OrenAI_Fase01_4Periodo.pdf)
 
 ### 3. Diagramas de Engenharia
+- [Quadro Consolidado de Experimentações da Fase 02](assets/diagrams/diagrama_experimentacoes_fase02.png)
 - [Diagrama de Arquitetura Multi-Agentes (MAS / MoE)](assets/diagrams/diagrama_arquitetura_mas_moe.png)
 - [Diagrama de Atividades e Fluxo HITL](assets/diagrams/diagrama_fluxo_multiagente.png)
 - [Modelo Lógico de Dados DER (3FN)](assets/diagrams/diagrama_der_logico.png)

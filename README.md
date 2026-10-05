@@ -173,12 +173,17 @@ Acesse no navegador:
 
 ---
 
-## 👥 Equipe de Desenvolvimento
+## 👥 Equipe de Desenvolvimento e Orientadores
 
-- **Cauã Felype:** Líder Técnico & Arquiteto de Software / MAS
-- **Gabryel Rodrigues:** Engenheiro de Machine Learning / MAPDA & XAI
-- **Roger Prado:** Engenheiro de Dados & Requisitos Geológicos
-- **Rafael Farias:** Engenheiro de Frontend & Visualização 3D (Three.js)
+### Integrantes do Projeto
+- **Cauã Felype** (Matrícula: 2510189) — Líder Técnico / Arquiteto de Software & MAS
+- **Gabryel Rodrigues** (Matrícula: 2510200) — Engenheiro de Machine Learning / MAPDA & XAI
+- **Roger Prado** (Matrícula: 25121516) — Engenheiro de Dados & Requisitos Geológicos
+- **Rafael Farias** (Matrícula: 2510314) — Engenheiro de Frontend & Visualização 3D (Three.js)
+
+### Docentes Orientadores
+- **Renato Luan De Sousa Araújo** (Matrícula: 11967) — Orientador Principal
+- **Jeferson Silva Araújo** (Matrícula: 11195) — Orientador Secundário
 
 ---
 
